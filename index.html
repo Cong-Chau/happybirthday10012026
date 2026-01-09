@@ -950,19 +950,22 @@
           hasUserInteracted = true;
           tapInstruction.style.display = "none";
 
+          // CHỈ unlock quyền audio, không play
+          audio.load();
+
           // BẮT ĐẦU COUNTDOWN NGAY LẬP TỨC
           startBirthdayAnimation();
 
           // Unlock audio ở task kế tiếp, KHÔNG block UI
-          setTimeout(() => {
-            audio
-              .play()
-              .then(() => {
-                audio.pause();
-                audio.currentTime = 0;
-              })
-              .catch(() => {});
-          }, 0);
+          //setTimeout(() => {
+          //  audio
+          //    .play()
+          //    .then(() => {
+          //     audio.pause();
+          //     audio.currentTime = 0;
+          //  })
+          //  .catch(() => {});
+          //}, 0);
         }
 
         document.addEventListener("click", handleFirstInteraction, {
